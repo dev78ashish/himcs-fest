@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiper-theme-color: #4F46E5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-light dark:bg-dark text-dark dark:text-light;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, #4F46E5 0%, #EC4899 100%);
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+}
+
+.nav-link {
+  @apply relative text-dark dark:text-light hover:text-primary dark:hover:text-primary transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:ring-offset-2;
+}
+
+.btn-outline {
+  @apply px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold font-display mb-6 text-center;
+}
+
+.section-subtitle {
+  @apply text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-center mb-12;
+}
+
+.event-card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+}
+
+.countdown-item {
+  @apply flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 w-20 h-20 md:w-24 md:h-24;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mobile-menu {
+  @apply fixed inset-0 bg-dark/90 backdrop-blur-md flex flex-col items-center justify-center z-50 transform transition-all duration-300;
+}
+
+.mobile-menu.hidden {
+  @apply opacity-0 pointer-events-none;
+}
+
+.mobile-menu-link {
+  @apply text-2xl font-medium text-white py-3 transition-all duration-300 hover:text-primary;
+}
