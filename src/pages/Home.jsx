@@ -41,30 +41,24 @@ const featuredEvents = [
 ]
 
 
-const festivalImages = [
-  {
-    url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
-    alt: "Festival crowd at night"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6a3",
-    alt: "Concert stage with lights"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3",
-    alt: "Festival performance"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1506157786151-b8491531f063",
-    alt: "Colorful festival celebration"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1603190287605-e6ade32fa852",
-    alt: "Technical exhibit"
-  }
-];
-
 const Home = () => {
+
+  const festivalImages = [
+    { url: "/assets/home images/IMG_5282.JPG", alt: "Festival crowd at night" },
+    { url: "/assets/home images/IMG_5291.JPG", alt: "Concert stage with lights" },
+    { url: "/assets/home images/IMG_5305.JPG", alt: "Festival performance" },
+    { url: "/assets/home images/IMG_5306.JPG", alt: "Colorful festival celebration" },
+    { url: "/assets/home images/IMG_5309.JPG", alt: "Technical exhibit" },
+    { url: "/assets/home images/IMG_5326.JPG", alt: "Technical exhibit" },
+    { url: "/assets/home images/IMG_5481.JPG", alt: "Technical exhibit" },
+    { url: "/assets/home images/IMG_5659.JPG", alt: "Technical exhibit" },
+    { url: "/assets/home images/IMG_5666.JPG", alt: "Technical exhibit" },
+    { url: "/assets/home images/IMG_5750.JPG", alt: "Technical exhibit" },
+    { url: "/assets/home images/IMG_5831.JPG", alt: "Technical exhibit" }
+  ];
+
+
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -74,103 +68,103 @@ const Home = () => {
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Replace video with slideshow component */}
-      <BackgroundSlideshow images={festivalImages} interval={6000} />
-      
-      <div className="container mx-auto px-4 z-10 text-center">
-        <motion.h1 
-          className="text-5xl md:text-7xl font-bold text-white mb-6 font-display"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          MAGNIFEST <span className="text-primary">2025</span>
-        </motion.h1>
-        
-        <motion.p 
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          The biggest cultural and technical fest of the year
-        </motion.p>
-        
-        <motion.div
-          className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <div className="flex items-center text-white">
-            <FaCalendarAlt className="mr-2 text-primary" />
-            <span>March 15-17, 2025</span>
-          </div>
-          <div className="hidden md:block w-2 h-2 rounded-full bg-primary"></div>
-          <div className="flex items-center text-white">
-            <FaMapMarkerAlt className="mr-2 text-primary" />
-            <span>Hindustan Campus, Farah, Mathura</span>
-          </div>
-          <div className="hidden md:block w-2 h-2 rounded-full bg-primary"></div>
-          <div className="flex items-center text-white">
-            <FaTicketAlt className="mr-2 text-primary" />
-            <span>3000+ Participants</span>
-          </div>
-        </motion.div>
-        
-        <motion.div
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <CountdownTimer />
-        </motion.div>
-        
-        <motion.div 
-          className="mt-12 flex flex-col sm:flex-row justify-center gap-4"
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <Link to="/register" className="btn-primary">
-            Register Now
-          </Link>
-          <Link to="/events" className="btn-outline">
-            Explore Events
-          </Link>
-        </motion.div>
-      </div>
-      
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-        <motion.div 
-          className="animate-bounce"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-        >
-          <a 
-            href="#about" 
-            className="text-white flex flex-col items-center"
+        {/* Replace video with slideshow component */}
+        <BackgroundSlideshow images={festivalImages} interval={6000} />
+
+        <div className="container mx-auto px-4 z-10 text-center">
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold text-white mb-6 font-display"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
           >
-            <span className="mb-2">Scroll Down</span>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-6" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
+            MAGNIFEST <span className="text-primary">2025</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            The biggest cultural and technical fest of the year
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            <div className="flex items-center text-white">
+              <FaCalendarAlt className="mr-2 text-primary" />
+              <span>April 18-19, 2025</span>
+            </div>
+            <div className="hidden md:block w-2 h-2 rounded-full bg-primary"></div>
+            <div className="flex items-center text-white">
+              <FaMapMarkerAlt className="mr-2 text-primary" />
+              <span>Hindustan Campus, Farah, Mathura</span>
+            </div>
+            <div className="hidden md:block w-2 h-2 rounded-full bg-primary"></div>
+            <div className="flex items-center text-white">
+              <FaTicketAlt className="mr-2 text-primary" />
+              <span>3000+ Participants</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            <CountdownTimer />
+          </motion.div>
+
+          <motion.div
+            className="mt-12 flex flex-col sm:flex-row justify-center gap-4"
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            <Link to="/register" className="btn-primary">
+              Register Now
+            </Link>
+            <Link to="/events" className="btn-outline">
+              Explore Events
+            </Link>
+          </motion.div>
+        </div>
+
+        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+          <motion.div
+            className="animate-bounce"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+          >
+            <a
+              href="#about"
+              className="text-white flex flex-col items-center"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-              />
-            </svg>
-          </a>
-        </motion.div>
-      </div>
-    </section>
+              <span className="mb-2">Scroll Down</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </a>
+          </motion.div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-light dark:bg-dark">
@@ -178,10 +172,11 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
             <h2 className="section-title">About <span className="text-primary">Magnifest</span></h2>
             <p className="section-subtitle">
-              Three days of excitement, innovation, and entertainment
+              Two days of excitement, innovation, and entertainment
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {/* Cultural Events */}
               <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -189,36 +184,33 @@ const Home = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4">Cultural Events</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  From music and dance to drama and fashion, experience the vibrant cultural showcase with performances from talented artists.
-                </p>
+                <p className="text-gray-600 dark:text-gray-300">Where Art Meets Passion! Experience the vibrancy of music, dance, drama, and fashion.</p>
               </div>
-              
+
+              {/* Management Events */}
               <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4">Management Events</h3>
+                <p className="text-gray-600 dark:text-gray-300">Think. Create. Lead! Dive into the world of business, marketing, and innovation.</p>
+              </div>
+
+              {/* Technical Events */}
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4">Technical Events</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Showcase your technical skills in coding competitions, hackathons, robotics, and various engineering challenges.
-                </p>
-              </div>
-              
-              <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-4">Workshops & Talks</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Learn from industry experts and gain insights through interactive workshops, seminars, and inspiring talks.
-                </p>
+                <p className="text-gray-600 dark:text-gray-300">Code. Compete. Conquer! Take on the challenges of coding, gaming, and problem-solving.</p>
               </div>
             </div>
-            
+
+
             <div className="mt-12">
               <Link to="/about" className="btn-outline">
                 Learn More
@@ -235,7 +227,7 @@ const Home = () => {
           <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
             Don't miss out on our most anticipated events of the year
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {featuredEvents.map((event) => (
               <div key={event.id} data-aos="fade-up" data-aos-delay={event.id * 100}>
@@ -243,7 +235,7 @@ const Home = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12" data-aos="fade-up">
             <Link to="/events" className="btn-primary">
               View All Events
@@ -283,7 +275,7 @@ const Home = () => {
           <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
             Glimpses from our previous editions
           </p>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             <div className="grid gap-4" data-aos="zoom-in" data-aos-delay="100">
               <div>
@@ -318,7 +310,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="text-center mt-12" data-aos="fade-up">
             <Link to="/gallery" className="btn-outline">
               View Full Gallery
@@ -334,11 +326,11 @@ const Home = () => {
           <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
             Partnering with industry leaders to bring you the best experience
           </p>
-          
+
           <div data-aos="fade-up" data-aos-delay="200">
             <SponsorSlider />
           </div>
-          
+
           <div className="text-center mt-12" data-aos="fade-up">
             <Link to="/sponsors" className="btn-outline">
               Become a Sponsor

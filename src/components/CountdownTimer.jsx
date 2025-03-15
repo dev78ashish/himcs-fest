@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const CountdownTimer = () => {
   // Set the date for the college fest (example: March 15, 2025)
-  const festDate = new Date('April 15, 2025 09:00:00').getTime()
+  const festDate = new Date('April 18, 2025 09:00:00').getTime()
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
