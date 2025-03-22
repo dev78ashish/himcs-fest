@@ -107,7 +107,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            The biggest cultural and technical fest of the year
+            The biggest management, cultural and technical  fest of the year! 🎉🚀💼
           </motion.p>
 
           <motion.div
