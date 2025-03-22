@@ -30,7 +30,7 @@ const BackgroundSlideshow = ({ images, interval = 5000 }) => {
           />
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
     </div>
   );
 };
