@@ -13,7 +13,7 @@ const featuredEvents = [
     id: 1,
     title: 'Battle of Bands',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    image: '/assets/images/WhatsApp Image 2025-03-22 at 13.23.24_77acc154.jpg',
     date: 'March 15, 2025',
     location: 'Main Auditorium',
     time: '6:00 PM - 10:00 PM',
@@ -21,24 +21,25 @@ const featuredEvents = [
   },
   {
     id: 2,
-    title: 'Hackathon 2025',
-    category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    date: 'March 16, 2025',
-    location: 'Tech Hub',
-    time: '9:00 AM - 9:00 PM',
-    description: '24-hour coding marathon to build innovative solutions for real-world problems.'
-  },
-  {
-    id: 3,
     title: 'Fashion Show',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1469488865564-c2de10f69f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    image: '/assets/images/fashion3.jpg',
     date: 'March 17, 2025',
     location: 'Central Plaza',
     time: '7:00 PM - 9:00 PM',
     description: 'Showcase your style and creativity on the ramp with the latest fashion trends.'
-  }
+  },
+  {
+    id: 3,
+    title: 'Programming Contest',
+    category: 'Technical',
+    image: '/assets/events/programming.jpg',
+    date: 'March 16, 2025',
+    location: 'Tech Hub',
+    time: '9:00 AM - 3:00 PM',
+    description: 'Test your coding skills and compete against other programmers to solve complex algorithmic challenges.'
+  },
+  
 ]
 
 
