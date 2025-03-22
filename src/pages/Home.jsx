@@ -67,7 +67,7 @@ const Home = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-      <section className="relative pt-6 min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative py-32 flex items-center justify-center overflow-hidden">
         {/* Replace video with slideshow component */}
         <BackgroundSlideshow images={festivalImages} interval={6000} />
 
