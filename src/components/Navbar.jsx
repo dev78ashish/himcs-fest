@@ -66,8 +66,13 @@ const Navbar = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold font-display">
-          MAGNIFEST <span className="text-primary">2025</span>
+        <Link to="/" className="flex items-center">
+          {/* Logo image with responsive sizing */}
+          <img 
+            src="/logo pic.png" 
+            alt="Magnifest 2025 Logo" 
+            className="h-8 sm:h-10 md:h-12 w-auto transition-all duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation */}
