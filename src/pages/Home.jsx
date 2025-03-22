@@ -279,34 +279,34 @@ const Home = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             <div className="grid gap-4" data-aos="zoom-in" data-aos-delay="100">
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/home images/IMG_5282.JPG" alt="Gallery image" />
               </div>
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/home images/IMG_5831.JPG" alt="Gallery image" />
               </div>
             </div>
             <div className="grid gap-4" data-aos="zoom-in" data-aos-delay="200">
-              <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Gallery image" />
+            <div>
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/home images/IMG_5291.JPG" alt="Gallery image" />
               </div>
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/old/old1.jpg" alt="Gallery image" />
               </div>
             </div>
             <div className="grid gap-4" data-aos="zoom-in" data-aos-delay="300">
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/home images/IMG_5481.JPG" alt="Gallery image" />
               </div>
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/old/old2.jpg" alt="Gallery image" />
               </div>
             </div>
             <div className="grid gap-4" data-aos="zoom-in" data-aos-delay="400">
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/home images/IMG_5326.JPG" alt="Gallery image" />
               </div>
               <div>
-                <img className="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Gallery image" />
+                <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/old/old3.jpg" alt="Gallery image" />
               </div>
             </div>
           </div>

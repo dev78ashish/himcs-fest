@@ -2,106 +2,90 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaSearch, FaTimes } from 'react-icons/fa'
 
-// Sample gallery data
+// Sample gallery data - removed year property
 const galleryData = [
   {
     id: 1,
-    title: 'Concert Night',
-    category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2024'
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/home images/IMG_5282.JPG'
   },
   {
     id: 2,
-    title: 'Hackathon Winners',
-    category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2024'
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/home images/IMG_5309.JPG'
   },
   {
     id: 3,
-    title: 'Dance Performance',
-    category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80',
-    year: '2024'
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/home images/IMG_5306.JPG'
   },
   {
     id: 4,
     title: 'Robotics Exhibition',
     category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2023'
+    image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   },
   {
     id: 5,
     title: 'Fashion Show',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1469488865564-c2de10f69f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2023'
+    image: 'https://images.unsplash.com/photo-1469488865564-c2de10f69f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   },
   {
     id: 6,
     title: 'Startup Pitch',
     category: 'Workshop',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2023'
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   },
   {
     id: 7,
     title: 'Photography Exhibition',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
-    year: '2022'
+    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80'
   },
   {
     id: 8,
     title: 'Debate Finals',
     category: 'Literary',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2022'
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   },
   {
     id: 9,
     title: 'Gaming Tournament',
     category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2022'
+    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   },
   {
     id: 10,
     title: 'Cultural Night',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2021'
+    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   },
   {
     id: 11,
     title: 'Award Ceremony',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
-    year: '2021'
+    image: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80'
   },
   {
     id: 12,
     title: 'Tech Exhibition',
     category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    year: '2021'
+    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
   }
 ]
 
 const Gallery = () => {
   const [filter, setFilter] = useState('All')
-  const [yearFilter, setYearFilter] = useState('All')
   const [selectedImage, setSelectedImage] = useState(null)
   
   const categories = ['All', 'Cultural', 'Technical', 'Workshop', 'Literary']
-  const years = ['All', '2024', '2023', '2022', '2021']
   
   const filteredImages = galleryData.filter(image => {
-    const matchesCategory = filter === 'All' || image.category === filter
-    const matchesYear = yearFilter === 'All' || image.year === yearFilter
-    return matchesCategory && matchesYear
+    return filter === 'All' || image.category === filter
   })
 
   const openLightbox = (image) => {
@@ -128,8 +112,8 @@ const Gallery = () => {
           Relive the memories from our previous editions
         </p>
         
-        {/* Filters */}
-        <div className="flex flex-col md:flex-row justify-center items-center mb-12 gap-4" data-aos="fade-up" data-aos-delay="200">
+        {/* Filters - removed year filter section */}
+        <div className="flex justify-center mb-12" data-aos="fade-up" data-aos-delay="200">
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (
               <button
@@ -142,24 +126,6 @@ const Gallery = () => {
                 onClick={() => setFilter(category)}
               >
                 {category}
-              </button>
-            ))}
-          </div>
-          
-          <div className="h-8 w-px bg-gray-300 dark:bg-gray-700 hidden md:block"></div>
-          
-          <div className="flex flex-wrap gap-2 justify-center">
-            {years.map((year) => (
-              <button
-                key={year}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  yearFilter === year 
-                    ? 'bg-secondary text-white' 
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
-                }`}
-                onClick={() => setYearFilter(year)}
-              >
-                {year}
               </button>
             ))}
           </div>
@@ -186,7 +152,7 @@ const Gallery = () => {
                   <div className="text-center p-4">
                     <FaSearch className="text-white text-2xl mx-auto mb-2" />
                     <h3 className="text-white font-bold">{item.title}</h3>
-                    <p className="text-gray-200 text-sm">{item.category} | {item.year}</p>
+                    <p className="text-gray-200 text-sm">{item.category}</p>
                   </div>
                 </div>
               </motion.div>
@@ -200,10 +166,7 @@ const Gallery = () => {
             </p>
             <button 
               className="btn-primary"
-              onClick={() => {
-                setFilter('All')
-                setYearFilter('All')
-              }}
+              onClick={() => setFilter('All')}
             >
               Reset Filters
             </button>
@@ -234,7 +197,7 @@ const Gallery = () => {
             />
             <div className="text-white text-center mt-4">
               <h3 className="text-xl font-bold">{selectedImage.title}</h3>
-              <p className="text-gray-300">{selectedImage.category} | {selectedImage.year}</p>
+              <p className="text-gray-300">{selectedImage.category}</p>
             </div>
           </div>
         </motion.div>

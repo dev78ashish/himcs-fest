@@ -72,8 +72,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg">Our Location</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Hindustan Campus, Farah<br />
-                      Mathura
+                      Hindustan Campus <br />
+                      Agra-Delhi Highway NH-2, <br />
+                      Farah, Uttar Pradesh - 281122
                     </p>
                   </div>
                 </div>

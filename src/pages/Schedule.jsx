@@ -98,10 +98,99 @@ const scheduleData = {
 
 const Schedule = () => {
   const [activeDay, setActiveDay] = useState('Day 1')
-  
+
   const days = Object.keys(scheduleData)
 
   return (
+    // <motion.div
+    //   initial={{ opacity: 0 }}
+    //   animate={{ opacity: 1 }}
+    //   exit={{ opacity: 0 }}
+    //   transition={{ duration: 0.5 }}
+    //   className="pt-24 pb-20"
+    // >
+    //   <div className="container mx-auto px-4">
+    //     <h1 className="section-title" data-aos="fade-up">Event <span className="text-primary">Schedule</span></h1>
+    //     <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+    //       Plan your Festivo 2025 experience with our detailed schedule
+    //     </p>
+
+    //     {/* Day Tabs */}
+    //     <div className="flex justify-center mb-12" data-aos="fade-up" data-aos-delay="200">
+    //       <div className="inline-flex rounded-md shadow-sm bg-gray-100 dark:bg-gray-800 p-1">
+    //         {days.map((day) => (
+    //           <button
+    //             key={day}
+    //             className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
+    //               activeDay === day 
+    //                 ? 'bg-primary text-white' 
+    //                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+    //             }`}
+    //             onClick={() => setActiveDay(day)}
+    //           >
+    //             {day}
+    //           </button>
+    //         ))}
+    //       </div>
+    //     </div>
+
+    //     {/* Schedule Timeline */}
+    //     <div className="max-w-4xl mx-auto">
+    //       <div className="relative">
+    //         {/* Timeline Line */}
+    //         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+
+    //         {/* Events */}
+    //         {scheduleData[activeDay].map((event, index) => (
+    //           <motion.div 
+    //             key={event.id}
+    //             className="relative flex gap-6 mb-8"
+    //             initial={{ opacity: 0, x: -20 }}
+    //             animate={{ opacity: 1, x: 0 }}
+    //             transition={{ delay: index * 0.1 }}
+    //             data-aos="fade-up"
+    //             data-aos-delay={index * 100}
+    //           >
+    //             {/* Timeline Dot */}
+    //             <div className="absolute left-8 w-4 h-4 -ml-2 rounded-full bg-primary z-10"></div>
+
+    //             {/* Time */}
+    //             <div className="w-32 pt-1 text-right flex-shrink-0">
+    //               <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+    //                 {event.time.split(' - ')[0]}
+    //               </span>
+    //             </div>
+
+    //             {/* Event Card */}
+    //             <div className="flex-grow bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+    //               <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+    //               <p className="text-gray-600 dark:text-gray-300 mb-4">{event.description}</p>
+
+    //               <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-300">
+    //                 <div className="flex items-center">
+    //                   <FaClock className="mr-2 text-primary" />
+    //                   <span>{event.time}</span>
+    //                 </div>
+    //                 <div className="flex items-center">
+    //                   <FaMapMarkerAlt className="mr-2 text-primary" />
+    //                   <span>{event.location}</span>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           </motion.div>
+    //         ))}
+    //       </div>
+    //     </div>
+
+    //     {/* Download Schedule */}
+    //     <div className="text-center mt-16" data-aos="fade-up">
+    //       <button className="btn-outline">
+    //         <FaCalendarAlt className="inline-block mr-2" />
+    //         Download Full Schedule
+    //       </button>
+    //     </div>
+    //   </div>
+    // </motion.div>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -110,85 +199,7 @@ const Schedule = () => {
       className="pt-24 pb-20"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title" data-aos="fade-up">Event <span className="text-primary">Schedule</span></h1>
-        <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Plan your Festivo 2025 experience with our detailed schedule
-        </p>
-        
-        {/* Day Tabs */}
-        <div className="flex justify-center mb-12" data-aos="fade-up" data-aos-delay="200">
-          <div className="inline-flex rounded-md shadow-sm bg-gray-100 dark:bg-gray-800 p-1">
-            {days.map((day) => (
-              <button
-                key={day}
-                className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
-                  activeDay === day 
-                    ? 'bg-primary text-white' 
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
-                onClick={() => setActiveDay(day)}
-              >
-                {day}
-              </button>
-            ))}
-          </div>
-        </div>
-        
-        {/* Schedule Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
-            
-            {/* Events */}
-            {scheduleData[activeDay].map((event, index) => (
-              <motion.div 
-                key={event.id}
-                className="relative flex gap-6 mb-8"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-8 w-4 h-4 -ml-2 rounded-full bg-primary z-10"></div>
-                
-                {/* Time */}
-                <div className="w-32 pt-1 text-right flex-shrink-0">
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                    {event.time.split(' - ')[0]}
-                  </span>
-                </div>
-                
-                {/* Event Card */}
-                <div className="flex-grow bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{event.description}</p>
-                  
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-300">
-                    <div className="flex items-center">
-                      <FaClock className="mr-2 text-primary" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <FaMapMarkerAlt className="mr-2 text-primary" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Download Schedule */}
-        <div className="text-center mt-16" data-aos="fade-up">
-          <button className="btn-outline">
-            <FaCalendarAlt className="inline-block mr-2" />
-            Download Full Schedule
-          </button>
-        </div>
+        <h1 className="section-title" data-aos="fade-up">Coming <span className="text-primary">Soon</span></h1>
       </div>
     </motion.div>
   )
