@@ -75,8 +75,6 @@ const Navbar = () => {
           />
         </Link>
 
-
-
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
