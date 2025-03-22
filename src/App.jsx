@@ -28,18 +28,45 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
+  const [pulseOpacity, setPulseOpacity] = useState(1);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPulseOpacity(prev => prev === 1 ? 0.6 : 1);
+    }, 1500);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-dark">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4 animate-pulse">
-            MAGNIFEST <span className="text-primary">2025</span>
-          </h1>
-          <div className="w-48 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full">
-            <div className="h-full bg-white rounded-full animate-pulse-slow"></div>
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-900">
+      <div className="text-center">
+        {/* Logo Image */}
+        <div className="mb-8">
+          <div className="w-40 h-40 mx-auto flex items-center justify-center">
+            <img 
+              src="/logo pic.png" 
+              alt="Magnifest Logo" 
+              className="rounded-xs shadow-lg"
+            />
           </div>
         </div>
+        
+        {/* Title */}
+        <h1 
+          className="text-4xl font-bold text-white mb-4"
+          style={{ opacity: pulseOpacity, transition: 'opacity 0.7s ease-in-out' }}
+        >
+          MAGNIFEST <span className="text-purple-500">2025</span>
+        </h1>
+        
+        {/* Underline */}
+        <div className="w-48 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full overflow-hidden">
+          <div className="h-full w-full bg-white rounded-full animate-pulse"></div>
+        </div>
       </div>
+    </div>
     )
   }
 
