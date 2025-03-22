@@ -26,7 +26,7 @@ const EventCard = ({ event }) => {
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{description}</p>
         
-        <div className="flex flex-col space-y-2 text-sm text-gray-600 dark:text-gray-300">
+        {/* <div className="flex flex-col space-y-2 text-sm text-gray-600 dark:text-gray-300">
           <div className="flex items-center">
             <FaCalendarAlt className="mr-2 text-primary" />
             <span>{date}</span>
@@ -39,9 +39,9 @@ const EventCard = ({ event }) => {
             <FaMapMarkerAlt className="mr-2 text-primary" />
             <span>{location}</span>
           </div>
-        </div>
+        </div> */}
         
-        <button className="mt-6 w-full btn-outline">View Details</button>
+        {/* <button className="mt-6 w-full btn-outline">View Details</button> */}
       </div>
     </motion.div>
   )

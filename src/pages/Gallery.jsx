@@ -24,65 +24,101 @@ const galleryData = [
   },
   {
     id: 4,
-    title: 'Robotics Exhibition',
-    category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/old/IMG-20250322-WA0005.jpg'
   },
   {
     id: 5,
-    title: 'Fashion Show',
+    title: 'Award Ceremony',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1469488865564-c2de10f69f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    image: '/assets/images/fashion2.jpg'
   },
   {
     id: 6,
-    title: 'Startup Pitch',
-    category: 'Workshop',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    title: 'Fashion Show',
+    category: 'Cultural',
+    image: '/assets/images/fashion3.jpg'
   },
   {
     id: 7,
-    title: 'Photography Exhibition',
+    title: 'Group Dance',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80'
+    image: '/assets/home images/IMG_5659.JPG'
   },
   {
     id: 8,
-    title: 'Debate Finals',
-    category: 'Literary',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/images/IMG-20250322-WA0042.jpg'
   },
   {
     id: 9,
-    title: 'Gaming Tournament',
-    category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/images/IMG-20250322-WA0037.jpg'
   },
   {
     id: 10,
     title: 'Cultural Night',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+    image: '/assets/images/night1.jpg'
   },
   {
     id: 11,
-    title: 'Award Ceremony',
+    title: 'Fashion Show',
     category: 'Cultural',
-    image: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80'
+    image: '/assets/home images/IMG_5831.JPG'
   },
   {
     id: 12,
-    title: 'Tech Exhibition',
-    category: 'Technical',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
-  }
+    title: 'Group Dance',
+    category: 'Cultural',
+    image: '/assets/images/group.jpg'
+  },
+  {
+    id: 13,
+    title: 'Solo Dance',
+    category: 'Cultural',
+    image: '/assets/images/solo.jpg'
+  },
+  {
+    id: 14,
+    title: 'Group Dance',
+    category: 'Cultural',
+    image: '/assets/images/group3.jpg'
+  },
+  {
+    id: 15,
+    title: 'Singing',
+    category: 'Cultural',
+    image: '/assets/images/singing1.jpg'
+  },
+  {
+    id: 16,
+    title: 'Cultural Night',
+    category: 'Cultural',
+    image: '/assets/images/technical.jpg'
+  },
+  {
+    id: 17,
+    title: 'Award Ceremony',
+    category: 'Cultural',
+    image: '/assets/images/night2.jpg'
+  },
+  {
+    id: 18,
+    title: 'MAGNIFEST',
+    category: 'HIMCS',
+    image: '/assets/images/IMG-20250322-WA0031.jpg'
+  },
 ]
 
 const Gallery = () => {
   const [filter, setFilter] = useState('All')
   const [selectedImage, setSelectedImage] = useState(null)
   
-  const categories = ['All', 'Cultural', 'Technical', 'Workshop', 'Literary']
+  const categories = ['All','HIMCS', 'Cultural', 'Technical', 'Workshop', 'Literary']
   
   const filteredImages = galleryData.filter(image => {
     return filter === 'All' || image.category === filter

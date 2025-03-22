@@ -5,6 +5,7 @@ import CountdownTimer from '../components/CountdownTimer'
 import EventCard from '../components/EventCard'
 import SponsorSlider from '../components/SponsorSlider'
 import BackgroundSlideshow from '../components/BackgroundSlideShow'
+import { useEffect, useState } from 'react'
 
 // Sample featured events
 const featuredEvents = [
@@ -41,7 +42,23 @@ const featuredEvents = [
 ]
 
 
+
 const Home = () => {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const festivalImages = [
     { url: "/assets/home images/IMG_5282.JPG", alt: "Festival crowd at night" },
@@ -67,8 +84,10 @@ const Home = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-      <section className="relative py-24 flex items-center justify-center overflow-hidden">
-        {/* Replace video with slideshow component */}
+      <section
+        className={`relative ${isMobile ? "" : "min-h-screen"
+          } py-24 flex items-center justify-center overflow-hidden`}
+      >        {/* Replace video with slideshow component */}
         <BackgroundSlideshow images={festivalImages} interval={6000} />
 
         <div className="container mx-auto px-4 z-10 text-center">
@@ -286,7 +305,7 @@ const Home = () => {
               </div>
             </div>
             <div className="grid gap-4" data-aos="zoom-in" data-aos-delay="200">
-            <div>
+              <div>
                 <img className="h-auto max-w-full rounded-lg object-cover" src="/assets/home images/IMG_5291.JPG" alt="Gallery image" />
               </div>
               <div>

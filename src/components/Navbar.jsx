@@ -5,8 +5,23 @@ import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
   const location = useLocation()
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     // Check for user preference
@@ -50,7 +65,7 @@ const Navbar = () => {
   ]
 
   return (
-    <header className="fixed w-full z-50 transition-all duration-300 bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-md py-3">
+    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           {/* Logo image with responsive sizing, rounded corners, shadow, and hover effects */}
@@ -111,7 +126,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="mobile-menu"
           >
-            <div className="flex flex-col items-center space-y-6 py-8">
+            <div className="flex flex-col items-center space-y-6 py-8 bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-md py-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
