@@ -1,0 +1,32 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bright outer circle with glow effect -->
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="6" result="blur" />
+    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+  </filter>
+  
+  <!-- Outer circle with bright border -->
+  <circle cx="100" cy="100" r="95" fill="#FFFFFF" stroke="#00FFFF" stroke-width="5" />
+  
+  <!-- Inner circle with vibrant gradient -->
+  <circle cx="100" cy="100" r="80">
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="r" values="80;78;80" dur="3s" repeatCount="indefinite" />
+    <radialGradient id="innerGradient">
+      <stop offset="0%" stop-color="#4A00E0" />
+      <stop offset="100%" stop-color="#000B3F" />
+    </radialGradient>
+    <animate attributeName="fill" values="url(#innerGradient)" dur="1s" />
+  </circle>
+  
+  <!-- Text "M25" with vibrant gradient -->
+  <defs>
+    <linearGradient id="brightTextGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF00FF" /> <!-- Bright magenta -->
+      <stop offset="100%" stop-color="#00FFFF" /> <!-- Cyan -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Bold, larger text with stroke for visibility -->
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="55" font-weight="900" text-anchor="middle" fill="url(#brightTextGradient)" stroke="#FFFFFF" stroke-width="1.5" filter="url(#glow)">M25</text>
+</svg>

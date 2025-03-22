@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import EventCard from '../components/EventCard'
 
-// Sample events data
 const eventsData = [
   {
     id: 1,
@@ -246,7 +245,7 @@ const Events = () => {
       <div className="container mx-auto px-4">
         <h1 className="section-title" data-aos="fade-up">Our <span className="text-primary">Events</span></h1>
         <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Discover the exciting lineup of events at Festivo 2025
+          Discover the exciting lineup of events at Magnifest 2025
         </p>
 
         {/* Search and Filter */}
