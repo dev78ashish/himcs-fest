@@ -28,7 +28,7 @@ body {
   @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
 }
 
-.nav-link {
+/* .nav-link {
   @apply relative text-dark dark:text-light hover:text-primary dark:hover:text-primary transition-colors duration-300;
 }
 
@@ -39,7 +39,7 @@ body {
 
 .nav-link:hover::after {
   @apply w-full;
-}
+} */
 
 .btn-primary {
   @apply px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
@@ -81,7 +81,7 @@ body {
   }
 }
 
-.mobile-menu {
+/* .mobile-menu {
   @apply fixed inset-0 bg-dark/90 backdrop-blur-md flex flex-col items-center justify-center z-50 transform transition-all duration-300;
 }
 
@@ -91,4 +91,4 @@ body {
 
 .mobile-menu-link {
   @apply text-2xl font-medium text-white py-3 transition-all duration-300 hover:text-primary;
-}
+} */

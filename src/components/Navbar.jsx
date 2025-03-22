@@ -9,23 +9,22 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false)
   const location = useLocation()
 
+  // Handle scroll for background change
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
+      setScrolled(window.scrollY > 50)
     }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Load theme from local storage
   useEffect(() => {
-    // Check for user preference
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
       document.documentElement.classList.add('dark')
       setDarkMode(true)
     } else {
@@ -34,6 +33,7 @@ const Navbar = () => {
     }
   }, [])
 
+  // Toggle dark mode
   const toggleDarkMode = () => {
     if (darkMode) {
       document.documentElement.classList.remove('dark')
@@ -46,10 +46,12 @@ const Navbar = () => {
     }
   }
 
+  // Toggle mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
 
+  // Close mobile menu on link click
   const closeMenu = () => {
     setIsOpen(false)
   }
@@ -64,10 +66,15 @@ const Navbar = () => {
   ]
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-md py-3'
+          : 'bg-transparent py-5'
+      }`}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          {/* Logo image with responsive sizing, rounded corners, shadow, and hover effects */}
           <img
             src="/logo pic.png"
             alt="Magnifest 2025 Logo"
@@ -75,20 +82,22 @@ const Navbar = () => {
           />
         </Link>
 
-
-
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`nav-link ${location.pathname === link.path ? 'text-primary' : ''}`}
+              className={`nav-link ${
+                location.pathname === link.path ? 'text-primary' : ''
+              }`}
             >
               {link.name}
             </Link>
           ))}
-          <Link to="/register" className="btn-primary">Register Now</Link>
+          <Link to="/register" className="btn-primary">
+            Register Now
+          </Link>
           <button
             onClick={toggleDarkMode}
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-dark dark:text-light"
@@ -109,7 +118,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={toggleMenu}
-            className="text-dark dark:text-light focus:outline-none"
+            className="text-dark dark:text-light focus:outline-none z-50"
             aria-label="Toggle menu"
           >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -125,14 +134,14 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="mobile-menu"
+            className="absolute top-full left-0 w-full bg-white dark:bg-dark shadow-lg md:hidden"
           >
             <div className="flex flex-col items-center space-y-6 py-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="mobile-menu-link"
+                  className="mobile-menu-link text-lg font-semibold text-dark dark:text-light"
                   onClick={closeMenu}
                 >
                   {link.name}
